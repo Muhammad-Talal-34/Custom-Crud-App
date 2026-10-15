@@ -1,0 +1,184 @@
+/* --- Complete Color-Enhanced Category Management Design --- */
+.category-page-card {
+    max-width: 1200px;
+    width: 95%;
+    margin: 2rem auto;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    padding: 0;
+}
+
+/* Header */
+.category-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-bottom: 2px solid #f1f5f9;
+    padding: 1.5rem 2rem;
+}
+
+.category-page-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #0f172a;
+}
+
+/* Add Category Toolbar Form */
+.category-add-form {
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    align-items: center;
+    background: #f8fafc;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.category-add-form .category-filter-select {
+    width: 100%;
+    max-width: 400px;
+    margin: 0;
+    padding: 0.75rem 1rem;
+    border: 2px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+    color: #334155;
+    background: #ffffff;
+    transition: all 0.2s ease;
+}
+
+.category-add-form .category-filter-select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* Vibrant Add Category Button */
+.category-header-btn {
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.category-header-btn:hover {
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4);
+}
+
+/* Table Styling */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.crud-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0;
+}
+
+.crud-table th, 
+.crud-table td {
+    padding: 1rem 2rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: middle;
+}
+
+.crud-table th {
+    background-color: #f8fafc;
+    color: #475569;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.crud-table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+/* Status Badges with Rich Colors */
+.badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-right: 12px;
+    display: inline-block;
+}
+
+.badge-active {
+    background-color: #dcfce7;
+    color: #16a34a;
+    border: 1px solid #bbf7d0;
+}
+
+.badge-deactive {
+    background-color: #fee2e2;
+    color: #ef4444;
+    border: 1px solid #fecaca;
+}
+
+/* Action Buttons Styling */
+.btn-action {
+    padding: 0.5rem 1.1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+/* Modern Soft Red Delete Button */
+.btn-delete {
+    background-color: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+    box-shadow: 0 2px 5px rgba(220, 38, 38, 0.05);
+}
+
+.btn-delete:hover {
+    background-color: #dc2626;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(220, 38, 38, 0.25);
+}
+
+/* Vibrant Emerald Green Recover Button */
+.btn-recover {
+    background-color: #ecfdf5;
+    color: #059669;
+    border: 1px solid #a7f3d0;
+    box-shadow: 0 2px 5px rgba(5, 150, 105, 0.05);
+}
+
+.btn-recover:hover {
+    background-color: #059669;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(5, 150, 105, 0.25);
+}
+
+/* Empty Table Message */
+.empty-state-row {
+    text-align: center;
+    padding: 3rem !important;
+    color: #64748b;
+    font-size: 1.1rem;
+    background: #f8fafc;
+}

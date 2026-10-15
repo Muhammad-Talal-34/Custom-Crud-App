@@ -1,0 +1,260 @@
+/* =========================
+   SIDEBAR LAYOUT & THEME
+========================= */
+.sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    background-color: #212529; /* Dark theme background */
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    
+    /* Layout Fixes (from previous step) */
+    position: sticky;
+    top: var(--navbar-height);
+    height: calc(100vh - var(--navbar-height));
+    z-index: 10;
+}
+
+/* Utility Borders */
+.border-end { border-right: 1px solid rgba(255, 255, 255, 0.05); }
+.border-top { border-top: 1px solid rgba(255, 255, 255, 0.05); }
+
+/* =========================
+   SIDEBAR HEADER & LOGO
+========================= */
+.sidebar-header {
+    padding: 1.25rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-brand svg {
+    max-width: 100%;
+    height: auto;
+    color: #ffffff;
+}
+
+/* =========================
+   SIDEBAR NAVIGATION
+========================= */
+.sidebar-nav {
+    flex: 1; /* Takes up remaining vertical space */
+    overflow-y: auto; /* Allows scrolling only inside the nav */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* Custom Scrollbar for a cleaner look */
+.sidebar-nav::-webkit-scrollbar { width: 6px; }
+.sidebar-nav::-webkit-scrollbar-track { background: transparent; }
+.sidebar-nav::-webkit-scrollbar-thumb { 
+    background-color: rgba(255, 255, 255, 0.2); 
+    border-radius: 4px; 
+}
+
+/* Section Titles (e.g., "Nav Title") */
+.nav-title {
+    padding: 1.5rem 1rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Links */
+.nav-item {
+    margin: 0;
+    list-style: none;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 0.85rem 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+    font-size: 0.95rem;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-link.active {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 4px solid #3498db; /* Highlight accent color */
+    padding-left: calc(1rem - 4px);
+}
+
+/* Icons */
+.nav-icon {
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    fill: currentColor;
+}
+
+/* Bullet icon for sub-menu items */
+.nav-icon-bullet {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* =========================
+   SUB-MENUS (Dropdowns)
+========================= */
+.nav-group-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.15); /* Slightly darker background */
+    display: none; /* Hidden by default */
+}
+
+/* When the parent `li` has the class "show" */
+.nav-group.show .nav-group-items {
+    display: block; 
+}
+
+/* Indent sub-menu links */
+.nav-group-items .nav-link {
+    padding-left: 3.25rem; 
+}
+
+/* Sub-menu Toggle Arrow */
+.nav-group-toggle::after {
+    content: "";
+    margin-left: auto;
+    border: solid rgba(255, 255, 255, 0.5);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-45deg); /* Right facing arrow */
+    transition: transform 0.2s;
+}
+
+.nav-group.show .nav-group-toggle::after {
+    transform: rotate(45deg); /* Down facing arrow */
+}
+
+/* =========================
+   UTILITIES & BADGES
+========================= */
+.ms-auto { margin-left: auto; }
+.mt-5 { margin-top: 3rem; }
+
+.badge {
+    padding: 0.3em 0.6em;
+    font-size: 0.75em;
+    font-weight: 700;
+    border-radius: 0.25rem;
+    line-height: 1;
+}
+
+.bg-primary { 
+    background-color: #3498db; 
+    color: #fff; 
+}
+
+/* =========================
+   SIDEBAR FOOTER & TOGGLER
+========================= */
+.sidebar-footer {
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: flex-end;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-toggler {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.5);
+    transition: color 0.2s;
+}
+
+.sidebar-toggler:hover {
+    color: #ffffff;
+}
+
+/* Draws a "hamburger" or collapse icon purely with CSS */
+.sidebar-toggler::before {
+    content: "";
+    display: block;
+    width: 1rem;
+    height: 2px;
+    background: currentColor;
+    box-shadow: 0 -5px 0 currentColor, 0 5px 0 currentColor;
+}
+/* =========================
+   SIDEBAR COLLAPSED STATE
+========================= */
+
+/* 1. Shrink the sidebar width */
+.sidebar.collapsed {
+    width: 75px; /* Slightly wider so larger icons have room */
+    transition: width 0.3s ease;
+}
+
+.sidebar {
+    transition: width 0.3s ease;
+}
+
+/* 2. COMPLETELY HIDE everything except the icon */
+.sidebar.collapsed .nav-title,
+.sidebar.collapsed .nav-text, /* Hides your text */
+.sidebar.collapsed .badge,
+.sidebar.collapsed .nav-group-toggle::after,
+.sidebar.collapsed .sidebar-brand,
+.sidebar.collapsed .nav-group-items {
+    display: none !important;
+}
+
+/* 3. Center the icon perfectly in the middle of the minimized sidebar */
+.sidebar.collapsed .nav-link {
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+/* 4. MAKE THE ICON LARGER */
+.sidebar.collapsed .nav-icon {
+    margin-right: 0 !important; /* Removes the space that used to separate it from text */
+    
+    /* Increase these values to make the icon bigger */
+    width: 2rem !important;  
+    height: 2rem !important; 
+    font-size: 2rem !important; 
+    
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.7); 
+}
+
+/* Hover effects for the larger collapsed icons */
+.sidebar.collapsed .nav-link:hover .nav-icon,
+.sidebar.collapsed .nav-link.active .nav-icon {
+    color: #ffffff;
+}

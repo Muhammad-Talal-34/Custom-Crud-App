@@ -1,0 +1,119 @@
+/* =========================
+   CRUD TABLE UI
+========================= */
+.crud-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.crud-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.crud-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+
+.btn-add {
+    background: #3498db;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-add:hover { background: #2980b9; }
+
+/* Table Structure */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.crud-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.crud-table th {
+    background-color: #f8f9fa;
+    color: #7f8c8d;
+    padding: 1rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #ecf0f1;
+}
+
+.crud-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #ecf0f1;
+    color: #2c3e50;
+    vertical-align: middle;
+}
+
+.crud-table tr:hover {
+    background-color: #fbfcff;
+}
+
+.font-bold { font-weight: 600; }
+
+/* Image Avatars */
+.user-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ecf0f1;
+}
+
+.avatar-placeholder {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #bdc3c7;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Action Buttons */
+.btn-action {
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+.btn-edit {
+    background: rgba(46, 204, 113, 0.1);
+    color: #27ae60;
+}
+.btn-edit:hover { background: #27ae60; color: white; }
+
+.btn-delete {
+    background: rgba(231, 76, 60, 0.1);
+    color: #c0392b;
+}
+.btn-delete:hover { background: #c0392b; color: white; }
+
+.empty-state {
+    text-align: center;
+    padding: 3rem !important;
+    color: #7f8c8d;
+}

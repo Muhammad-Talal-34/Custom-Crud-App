@@ -1,0 +1,151 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to MYSQL CRUD</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/LandingPage.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@coreui/icons@3.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+     {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+    <!-- =========================
+         LANDING NAVBAR
+    ========================= -->
+    <header class="navbar">
+        <div class="navbar__container">
+            <a href="/" class="navbar__brand">MYSQL CRUD</a>
+
+            <button class="navbar__toggle" id="navbarToggle" aria-label="Toggle navigation" aria-controls="navbarMenu"
+                aria-expanded="false">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+
+            <nav id="navbarMenu" class="navbar__menu" role="navigation" aria-labelledby="navbarToggle">
+                <ul class="navbar__list">
+                    <li class="navbar__item"><a href="{% url 'landindpage' %}" class="navbar__link">Home</a></li>
+                    <li class="navbar__item"><a href="#features" clas="navbar__link">Features</a></li>
+                    <li class="navbar__item"><a href="#about" class="navbar__link">About Us</a></li>
+                    
+                    <!-- Landing Page Auth Buttons -->
+                    <li class="navbar__item"><a href="/login/" class="navbar__link" style="color: white; font-weight: 600;">Login</a></li>
+                    <li class="navbar__item navbar__item--cta">
+                        <a href="/register/" class="navbar__link navbar__link--cta">Register</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- =========================
+         LANDING HERO SECTION
+    ========================= -->
+    {% block content %}
+        
+    <div class="landing-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Manage Your Data <span class="highlight">Seamlessly</span>
+            </h1>
+            <p class="hero-subtitle">
+                The ultimate CRUD application for managing users, products, categories, and brands efficiently in one secure place.
+            </p>
+            <div class="hero-buttons">
+                <a href="/login/" class="btn-login">Login Now</a>
+                <a href="/register/" class="btn-register">Create Account</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================
+         LANDING FEATURES
+    ========================= -->
+    <div id="features" class="features-section">
+        
+        <div class="feature-box">
+            <i class="fas fa-users feature-icon icon-blue"></i>
+            <h3>User Management</h3>
+            <p>Easily add, update, and track user profiles with secure access controls.</p>
+        </div>
+        
+        <div class="feature-box">
+            <i class="fas fa-box-open feature-icon icon-green"></i>
+            <h3>Inventory Control</h3>
+            <p>Organize your products, categories, and brands with an intuitive interface.</p>
+        </div>
+        
+        <div class="feature-box">
+            <i class="fas fa-shield-alt feature-icon icon-purple"></i>
+            <h3>Fast & Secure</h3>
+            <p>Built on robust architecture ensuring your database remains fast and secure.</p>
+        </div>
+        
+    </div>
+{% endblock %}
+    <!-- =========================
+         LANDING FAT FOOTER
+    ========================= -->
+    <footer class="fat-footer">
+        <div class="fat-footer__container">
+            <div class="fat-footer__main">
+                <div class="fat-footer__column">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="fat-footer__column">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="fat-footer__column">
+                    <h3>About Our Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Our Story</a></li>
+                    </ul>
+                </div>
+                <div class="fat-footer__column">
+                    <h3>Connect With Us</h3>
+                    <ul>
+                        <li><a href="#">Newsletter Signup</a></li>
+                        <li><a href="#">Community Forum</a></li>
+                        <li><a href="#">Events</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="fat-footer__bottom">
+            <p class="fat-footer__copyright">&copy; 2026 MYSQL CRUD App. All Rights Reserved.</p>
+            <nav class="fat-footer__social" aria-label="Social Media">
+                <ul>
+                    <li><a href="#" aria-label="Our Facebook Profile"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><title>Facebook</title><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.35C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.732 0 1.325-.593 1.325-1.325V1.325C24 .593 23.407 0 22.675 0z" /></svg></a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- Navbar Toggle Script for Mobile -->
+    <script>
+        document.getElementById('navbarToggle').addEventListener('click', function() {
+            this.classList.toggle('is-active');
+            document.getElementById('navbarMenu').classList.toggle('is-active');
+        });
+    </script>
+</body>
+</html>

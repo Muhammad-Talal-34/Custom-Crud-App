@@ -1,0 +1,193 @@
+/* =========================================
+   PREMIUM WIDE ADD PRODUCT FORM
+========================================= */
+
+/* Main Card Container */
+.form-card {
+    max-width: 850px; 
+    margin: 3rem auto;
+    background: #ffffff;
+    border-radius: 16px; 
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08); 
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+/* Header Section */
+.crud-header {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    padding: 2rem 2.5rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.crud-header h2 {
+    margin: 0;
+    font-size: 1.7rem;
+    color: #0f172a;
+    font-weight: 700;
+    text-align: center;
+}
+
+.crud-header p {
+    margin: 0.5rem 0 0 0;
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+/* 🚀 Magic 2-Column Grid Layout */
+.custom-form {
+    padding: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    column-gap: 2rem;
+    row-gap: 1.8rem;
+}
+
+/* Jo cheezein poori width leni chahiye unke liye */
+.full-width {
+    grid-column: span 2;
+}
+
+/* Individual Input Group */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Labels */
+.form-group label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #334155;
+}
+
+.required {
+    color: #ef4444; 
+    margin-left: 3px;
+}
+
+/* 🚀 Input Fields AND Dropdowns (Select) */
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #1e293b;
+    background-color: #f8fafc;
+    transition: all 0.3s ease;
+}
+
+/* 🚀 Input & Dropdown Focus State */
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+    background-color: #ffffff;
+}
+
+/* File Upload Field */
+.file-input {
+    padding: 0.6rem;
+    border: 2px dashed #cbd5e1;
+    border-radius: 10px;
+    background: #f8fafc;
+    cursor: pointer;
+    color: #64748b;
+    transition: all 0.3s;
+}
+
+.file-input:hover {
+    border-color: #3b82f6;
+    background: #eff6ff;
+}
+
+.file-input::file-selector-button {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    color: #334155;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-right: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.file-input::file-selector-button:hover {
+    background: #f1f5f9;
+    border-color: #94a3b8;
+}
+
+/* Image ko center karne k liye */
+.center-image-group {
+    align-items: center; 
+    margin-top: 1.5rem;
+}
+
+/* Image input box ka size control karne k liye */
+.custom-file-size {
+    max-width: 450px; 
+    width: 100%;
+}
+
+/* Action Buttons Container (Center aligned) */
+.form-actions {
+    display: flex;
+    justify-content: center; 
+    gap: 1.5rem; 
+    border-top: 1px solid #f1f5f9;
+}
+
+/* Buttons ko mazeed neeche karne k liye */
+.push-buttons-down {
+    margin-top: 2rem; 
+    padding-top: 2rem;
+}
+
+/* Save Button */
+.btn-save {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.btn-save:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+}
+
+/* Cancel Button */
+.btn-cancel {
+    background-color: #ffffff;
+    color: #475569;
+    text-decoration: none;
+    padding: 0.8rem 2rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 1px solid #cbd5e1;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.btn-cancel:hover {
+    background-color: #f8fafc;
+    color: #0f172a;
+    border-color: #94a3b8;
+}

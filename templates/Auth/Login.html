@@ -1,0 +1,41 @@
+{% extends 'LandingPage.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <div class="login-card">
+        <h2 class="login-title">Welcome Back</h2>
+        <p class="login-subtitle">Please login to your account</p>
+
+        {% if error_message %}
+            <div style="background-color: #fee2e2; color: #dc2626; padding: 10px; border-radius: 5px; margin-bottom: 15px; text-align: center; border: 1px solid #f87171;">
+                {{ error_message }}
+            </div>
+        {% endif %}
+
+        <form method="POST" action="{% url 'login' %}" class="login-form">
+            {% csrf_token %}
+            
+            <div class="form-group username-group">
+                <label for="id_username">Username or Email</label>
+                <input type="text" name="username" id="id_username" placeholder="Enter username or email" required>
+            </div>
+
+            <div class="form-group password-group">
+                <label for="id_password">Password</label>
+                <input type="password" name="password" id="id_password" placeholder="Enter your password" required>
+            </div>
+            
+            <button type="submit" class="btn-submit">Login</button>
+        </form>
+
+        <p class="login-link">
+            Don't have an account? <a href="{% url 'register' %}">Register here</a>
+        </p>
+    </div>
+</div>
+{% endblock %}

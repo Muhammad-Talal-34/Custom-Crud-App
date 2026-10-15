@@ -1,0 +1,206 @@
+/* =========================================
+   ADD NEW USER FORM CSS
+========================================= */
+
+/* Smooth Load Animation */
+@keyframes slideUpFade {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Main Card Container */
+.form-card {
+    max-width: 700px; /* Slightly wider to accommodate side-by-side inputs */
+    margin: 2rem auto;
+    background: hsl(240, 5%, 96%);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    animation: slideUpFade 0.4s ease-out forwards;
+   
+}
+
+/* Header Enhancements */
+.form-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    text-align: center;
+    
+}
+
+.form-header h2 {
+    margin-bottom: 0.25rem;
+    color: #0f172a;
+}
+
+.text-muted {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Form Grid System */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.custom-form .form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Half width for Age input */
+.w-50 {
+    width: calc(50% - 0.75rem); 
+}
+
+/* Responsive Grid for Mobile Screens */
+@media (max-width: 600px) {
+    .form-row { 
+        grid-template-columns: 1fr; 
+    }
+    .w-50 { 
+        width: 100%; 
+    }
+}
+
+/* Labels & Asterisks */
+.custom-form label {
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+}
+
+.required {
+    color: #ef4444; /* Red asterisk */
+    margin-left: 2px;
+}
+
+.optional {
+    font-weight: 400;
+    color: #94a3b8;
+    font-size: 0.85rem;
+    margin-left: 4px;
+}
+
+/* Premium Input Fields */
+.custom-form input[type="text"],
+.custom-form input[type="email"],
+.custom-form input[type="number"] {
+    padding: 0.85rem 1.2rem;
+    border: 1.5px solid #e2e8f0;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #1e293b;
+    transition: all 0.25s ease;
+    outline: none;
+}
+
+/* Input Focus Glow */
+.custom-form input:focus {
+    background-color: #ffffff;
+    border-color: #3498db;
+    box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.15);
+}
+
+.custom-form input::placeholder { 
+    color: #94a3b8; 
+}
+
+/* Dropzone Style File Upload */
+.dropzone-box {
+    border: 2px dashed #cbd5e1;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    background-color: #f8fafc;
+    transition: all 0.2s ease;
+}
+
+.dropzone-box:hover {
+    border-color: #3498db;
+    background-color: #f0f9ff;
+}
+
+.custom-form .file-input {
+    font-size: 0.95rem;
+    color: #64748b;
+    cursor: pointer;
+    width: 100%;
+}
+
+.custom-form .file-input::file-selector-button {
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    color: #334155;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.custom-form .file-input::file-selector-button:hover {
+    background: #f1f5f9;
+    border-color: #94a3b8;
+}
+
+/* Action Buttons Container */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+/* Save Button */
+.btn-save {
+    background: #3498db;
+    color: white;
+    padding: 0.75rem 1.75rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(52, 152, 219, 0.2);
+    transition: all 0.2s ease;
+}
+
+.btn-save:hover {
+    background: #2980b9;
+    box-shadow: 0 6px 12px rgba(52, 152, 219, 0.3);
+    transform: translateY(-1px);
+}
+
+/* Cancel Button */
+.btn-cancel {
+    background: #ffffff;
+    color: #64748b;
+    padding: 0.75rem 1.75rem;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+}
+
+.btn-cancel:hover {
+    background: #f8fafc;
+    color: #0f172a;
+    border-color: #cbd5e1;
+}

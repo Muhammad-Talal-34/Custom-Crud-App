@@ -1,0 +1,120 @@
+/* =========================
+   HERO SECTION
+========================= */
+.landing-hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    color: #1f2937;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.hero-title .highlight {
+    color: #10b981;
+}
+
+.hero-subtitle {
+    font-size: 1.15rem;
+    color: #6b7280;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+}
+
+/* Hero Buttons */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn-login, .btn-register {
+    padding: 14px 35px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-login {
+    background-color: #10b981;
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2);
+}
+
+.btn-login:hover {
+    background-color: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(16, 185, 129, 0.3);
+    color: #ffffff;
+}
+
+.btn-register {
+    background-color: #ffffff;
+    color: #374151;
+    border: 2px solid #d1d5db;
+}
+
+.btn-register:hover {
+    border-color: #9ca3af;
+    background-color: #f9fafb;
+    color: #1f2937;
+}
+
+/* =========================
+   FEATURES SECTION
+========================= */
+.features-section {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    background-color: #f8f9fa;
+}
+
+.feature-box {
+    background: #ffffff;
+    padding: 35px 25px;
+    border-radius: 12px;
+    text-align: center;
+    flex: 1;
+    min-width: 280px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f3f4f6;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.icon-blue { color: #3498db; }
+.icon-green { color: #10b981; }
+.icon-purple { color: #8028b3; }
+
+.feature-box h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #1f2937;
+}
+
+.feature-box p {
+    color: #6b7280;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}

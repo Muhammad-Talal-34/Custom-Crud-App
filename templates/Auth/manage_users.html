@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/manage_users.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="crud-card list-card">
+    <div class="list-header">
+        <h2>User Management</h2>
+    </div>
+
+    <!-- Django Messages for success alerts -->
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="table-responsive">
+        <table class="custom-table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Current Role</th>
+                    <th>Change Role</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user_obj in users %}
+                <tr>
+                    <td class="font-bold">{{ user_obj.username }}</td>
+                    <td>{{ user_obj.email }}</td>
+                    
+                    <!-- Display current role with a badge -->
+                    <td><span class="badge">{{ user_obj.role|title }}</span></td>
+
+                    <!-- Form to change the role -->
+                    <td>
+                        <form action="{% url 'change_role' user_obj.id %}" method="POST" style="display:flex; gap:10px;">
+                            {% csrf_token %}
+                            <select name="role" class="form-control" style="padding: 5px; border-radius: 4px;">
+                                <option value="user" {% if user_obj.role == 'user' %}selected{% endif %}>User</option>
+                                <option value="manager" {% if user_obj.role == 'manager' %}selected{% endif %}>Manager</option>
+                                <option value="admin" {% if user_obj.role == 'admin' %}selected{% endif %}>Admin</option>
+                            </select>
+                            <button type="submit" class="btn-action btn-edit" style="padding: 5px 10px;">Update</button>
+                        </form>
+                    </td>
+
+                    <!-- Form to delete the user -->
+                    <td>
+                        <form action="{% url 'delete_user' user_obj.id %}" method="POST" onsubmit="return confirm('Are you sure you want to delete this user?');">
+                            {% csrf_token %}
+                            <button type="submit" class="btn-action btn-delete">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5" class="text-center empty-state">No other users found in the system.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

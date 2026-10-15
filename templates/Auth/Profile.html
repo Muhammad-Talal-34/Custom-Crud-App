@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/Profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="profile-wrapper">
+    <div class="profile-card">
+        <div class="profile-header">
+            <i class="fas fa-user-circle profile-icon"></i>
+            <h2>{{ request.user.first_name|title }} {{ request.user.last_name|title }}</h2>
+            <p>Active User Profile</p>
+        </div>
+
+        <div class="profile-info-group">
+            <span class="info-label">Username</span>
+            <span class="info-value">@{{ request.user.username }}</span>
+        </div>
+
+        <div class="profile-info-group">
+            <span class="info-label">Email Address</span>
+            <span class="info-value">{{ request.user.email }}</span>
+        </div>
+
+        <!-- Custom Fields Jo Aapne Model Mein Banaye Thay -->
+        <div class="profile-info-group">
+            <span class="info-label">Phone Number</span>
+            <span class="info-value">{{ request.user.phone_number|default:"Not Provided" }}</span>
+        </div>
+
+        <div class="profile-info-group">
+            <span class="info-label">Country</span>
+            <span class="info-value">{{ request.user.country_name|default:"Not Provided" }}</span>
+        </div>
+
+        <div class="profile-info-group">
+            <span class="info-label">City</span>
+            <span class="info-value">{{ request.user.city|default:"Not Provided" }}</span>
+        </div>
+
+        <div class="profile-info-group">
+            <span class="info-label">Complete Address</span>
+            <span class="info-value">{{ request.user.address|default:"Not Provided" }}</span>
+        </div>
+    </div>
+</div>
+{% endblock %}

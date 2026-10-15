@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/AddProduct.css' %}">
+{% endblock %}
+{% block content %}
+<div class="crud-card form-card">
+    <div class="crud-header">
+        <h2>Add New Product</h2>
+
+    </div>
+
+
+    <form action="" method="POST" enctype="multipart/form-data" class="custom-form">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="id_p_name">Product Name <span class="required">*</span></label>
+            <input type="text" id="id_p_name" name="name" value="{{product.p_name}}" required
+                placeholder="e.g. Galaxy S23">
+        </div>
+
+        <div class="form-group">
+            <label for="id_p_price">Price <span class="required">*</span></label>
+            <input type="number" id="id_p_price" name="price" value={{product.p_price}} required
+                placeholder="e.g. 150000">
+        </div>
+
+
+        <div class="form-group">
+            <label>Category <span class="required">*</span></label>
+            <!-- Dropdown -->
+            <select name="category_id"   class="custom-select" style="margin-bottom: 8px;">
+                                                                 <!-- <option value={{product.}} disabled selected>Select category</option> -->
+                {% for cat in categories %}
+                <option value="{{ cat.id }}"  {% if product.category.id == cat.id %}selected{% endif %}>{{ cat.name }}</option>
+                {% endfor %}
+            </select>
+
+            <input type="text" name="new_category" placeholder="Add New Category ">
+        </div>
+
+
+        <div class="form-group">
+            <label>Brand <span class="required">*</span></label>
+            <!-- Dropdown -->
+            <select name="brand_id" class="custom-select" style="margin-bottom: 8px;">
+                                                                     <!-- <option value="" disabled selected>Select brand</option> -->
+                {% for brand in brands %}
+                <option value="{{ brand.id }}" {% if product.brand.id == brand.id %}selected{% endif %}>{{ brand.name }}</option>
+                {% endfor %}
+            </select>
+
+            <input type="text" name="new_brand" placeholder="Add New Brand">
+        </div>
+
+
+        <div class="form-group full-width center-image-group">
+            <label for="id_p_image">Product Image</label>
+
+            <input type="file" id="id_p_image" name="image" value={{roduct.p_image}} accept="image/*"
+                class="file-input custom-file-size">
+        </div>
+
+
+        <div class="form-actions full-width push-buttons-down">
+
+            <button type="submit" class="btn-save">Save Product</button>
+            <a href="/products" class="btn-cancel">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

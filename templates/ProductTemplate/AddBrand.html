@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/Products.css' %}">
+<link rel="stylesheet" href="{% static 'css/Category.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="crud-card form-card category-page-card">
+
+    <div class="crud-header category-page-header">
+        <h2 style="margin-left: 2rem;font-size: 1.7rem;">Add & Manage Brands</h2>
+
+        <a href="/brand" class="btn-save category-header-btn" style="margin-right: 2rem;"> Back to Brands</a>
+    </div>
+
+    <!-- 🚀 ADD CATEGORY FORM -->
+    <form method="POST" action="" class="category-filter-form" style="background: #ffffff; padding: 0;">
+        {% csrf_token %}
+        <input type="text" name="brand_name" class="custom-select category-filter-select"
+            placeholder="Enter brand name..." required style="width: 100%; max-width: 400px;">
+
+        <button type="submit" class="btn-save category-header-btn">
+            <i class="cil-plus" style="margin-right: 5px;"></i> Add Brand
+        </button>
+    </form>
+<div style="margin-bottom: 20px; display: flex; gap: 10px;">
+    <!-- Normal Page -->
+    <a href="?trash=" class="btn-action" style="background: #3b82f6; text-decoration: none; padding: 8px 15px;">
+        View Active Brands
+    </a>
+    
+    <!-- Recycle Bin Page -->
+    <a href="?trash=true" class="btn-action" style="background: #475569; text-decoration: none; padding: 8px 15px;">
+        <i class="cil-trash"></i> Recycle Bin
+    </a>
+</div>
+    <!-- 🚀 ALL CATEGORIES LIST -->
+    <table class="crud-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>brand Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for brand in brands %}
+            <tr>
+                <td>{{ brand.id }}</td>
+                <td><strong>{{ brand.name }}</strong></td>
+                <td>
+                    {% if not brand.is_delete %}
+                    <!-- Agar delete NAHI hua (False) -->
+                    <span
+                        style="background: #dcfce3; color: #16a34a; padding: 3px 8px; border-radius: 4px;">Active</span>
+                    <a href="{% url 'deletebrand' brand.id %}" class="btn-action btn-delete">Delete</a>
+                    {% else %}
+                    <!-- Agar delete ho gaya hai (True) -->
+                    <span
+                        style="background: #fee2e2; color: #ef4444; padding: 3px 8px; border-radius: 4px;">Deleted</span>
+                    <a href="{% url 'recoverbrand' brand.id %}" class="btn-action btn-edit"
+                        style="background: #10b981;">Recover</a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="3" class="empty-state-row">No categories found yet.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+{% endblock %}

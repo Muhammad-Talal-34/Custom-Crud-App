@@ -1,0 +1,116 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    width: 100%; /* Forces the form to stay exactly in the center */
+    padding: 20px;
+}
+
+.login-card {
+    background: #ffffff;
+    padding: 50px; /* Increased padding for a larger look */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 550px; /* Increased from 400px to make the form wider */
+    margin: 0 auto; /* Guarantees absolute center alignment */
+}
+
+
+/* Headings */
+.login-title {
+    font-size: 1.8rem;
+    color: #1f2937;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.login-subtitle {
+    color: #6b7280;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+/* Form Groups & Spacing */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.username-group {
+    margin-bottom: 15px;
+}
+
+.password-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.form-group input {
+    padding: 10px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #1f2937;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #10b981; /* Focus hone par green border */
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+/* Error Text Styling */
+.error-text {
+    display: block;
+    color: #ef4444;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Submit Button (Green Theme) */
+.btn-submit {
+    width: 100%;
+    background-color: #0ba9d1; 
+    color: #ffffff;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #0ba9d1; /* Hover par dark green */
+}
+
+/* Bottom Register Link */
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    color: #4b5563;
+    font-size: 0.9rem;
+}
+
+.login-link a {
+    color: #0ba9d1;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
